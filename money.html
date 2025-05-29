@@ -1,0 +1,304 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Money Transfer &amp; Savings App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow-md">
+   <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+     <img alt="App logo showing a stylized dollar sign in blue and green colors" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/72a84699-33fe-4357-296c-3fe9e436d009.jpg" width="40"/>
+     <h1 class="text-2xl font-semibold text-gray-800">
+      MoneyWise
+     </h1>
+    </div>
+    <div>
+     <select aria-label="Select language" class="border border-gray-300 rounded-md py-1 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" id="language-select">
+      <option selected="" value="en">
+       English
+      </option>
+      <option value="rw">
+       Kinyarwanda
+      </option>
+      <option value="fr">
+       French
+      </option>
+      <option value="es">
+       Spanish
+      </option>
+      <option value="de">
+       German
+      </option>
+     </select>
+    </div>
+   </div>
+  </header>
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+   <section aria-label="Send or receive money" class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">
+     Send or Receive Money
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+     <button aria-label="Send money" class="flex flex-col items-center justify-center bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow focus:outline-none focus:ring-4 focus:ring-blue-400" id="sendMoneyBtn" type="button">
+      <img alt="Illustration of a hand holding a smartphone with money transfer arrows" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/be0ba95a-a2cf-4bbc-1bbb-ca9b6f7e0cf3.jpg" width="80"/>
+      <span class="text-lg font-medium text-gray-700">
+       Send Money
+      </span>
+     </button>
+     <button aria-label="Receive money" class="flex flex-col items-center justify-center bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow focus:outline-none focus:ring-4 focus:ring-green-400" id="receiveMoneyBtn" type="button">
+      <img alt="Illustration of a hand receiving money from a smartphone screen" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/cef7eae7-2950-424b-7797-1f32e76c0d51.jpg" width="80"/>
+      <span class="text-lg font-medium text-gray-700">
+       Receive Money
+      </span>
+     </button>
+    </div>
+   </section>
+   <section aria-label="Savings options" class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">
+     Savings
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+     <div aria-label="Create a new savings goal" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow focus-within:ring-4 focus-within:ring-yellow-400" id="createGoalBtn" role="button" tabindex="0">
+      <img alt="Illustration of a piggy bank with a target symbol representing savings goal" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/10c7b2e5-8cce-41a0-9c4d-1e1756a08956.jpg" width="80"/>
+      <h3 class="text-lg font-medium text-gray-700 mb-2">
+       Create Savings Goal
+      </h3>
+      <p class="text-gray-500 text-center text-sm">
+       Set a target and track your progress.
+      </p>
+     </div>
+     <div aria-label="View savings balance" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow focus-within:ring-4 focus-within:ring-yellow-400" id="viewBalanceBtn" role="button" tabindex="0">
+      <img alt="Illustration of a wallet with money and coins representing savings balance" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/f0cf18a0-2a35-4dc7-5d3e-22fe140e9081.jpg" width="80"/>
+      <h3 class="text-lg font-medium text-gray-700 mb-2">
+       View Savings Balance
+      </h3>
+      <p class="text-gray-500 text-center text-sm">
+       Check how much you have saved.
+      </p>
+     </div>
+     <div aria-label="Add money to savings" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow focus-within:ring-4 focus-within:ring-yellow-400" id="addSavingsBtn" role="button" tabindex="0">
+      <img alt="Illustration of hand putting coins into a piggy bank representing adding money to savings" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/2e8d3ee2-b5a1-41e9-a92b-fb8b4d42cb6f.jpg" width="80"/>
+      <h3 class="text-lg font-medium text-gray-700 mb-2">
+       Add to Savings
+      </h3>
+      <p class="text-gray-500 text-center text-sm">
+       Increase your savings balance easily.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-label="Recent transactions" class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">
+     Recent Transactions
+    </h2>
+    <div class="bg-white rounded-lg shadow-md overflow-x-auto">
+     <table class="min-w-full divide-y divide-gray-200" id="transactionsTable">
+      <thead class="bg-gray-100">
+       <tr>
+        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider" scope="col">
+         Date
+        </th>
+        <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider" scope="col">
+         Description
+        </th>
+        <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider" scope="col">
+         Amount
+        </th>
+        <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider" scope="col">
+         Status
+        </th>
+       </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200" id="transactionsBody">
+       <!-- Transactions will be dynamically loaded here -->
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+   <div class="max-w-5xl mx-auto px-4 text-center text-gray-500 text-sm">
+    © 2024 MoneyWise. All rights reserved.
+   </div>
+  </footer>
+
+  <script>
+    // Example backend API URL (replace with your real backend)
+    const API_URL = 'https://api.example.com';
+
+    // Utility function to create a table row for a transaction
+    function createTransactionRow(transaction) {
+      const tr = document.createElement('tr');
+
+      const dateTd = document.createElement('td');
+      dateTd.className = 'px-4 py-3 whitespace-nowrap text-sm text-gray-700';
+      dateTd.textContent = transaction.date;
+      tr.appendChild(dateTd);
+
+      const descTd = document.createElement('td');
+      descTd.className = 'px-4 py-3 whitespace-nowrap text-sm text-gray-700';
+      descTd.textContent = transaction.description;
+      tr.appendChild(descTd);
+
+      const amountTd = document.createElement('td');
+      amountTd.className = 'px-4 py-3 whitespace-nowrap text-sm text-right';
+      amountTd.textContent = (transaction.amount > 0 ? '+ ' : '- ') + '$' + Math.abs(transaction.amount).toFixed(2);
+      amountTd.classList.add(transaction.amount > 0 ? 'text-green-600' : 'text-red-600');
+      tr.appendChild(amountTd);
+
+      const statusTd = document.createElement('td');
+      statusTd.className = 'px-4 py-3 whitespace-nowrap text-sm text-right text-green-600';
+      statusTd.textContent = transaction.status;
+      tr.appendChild(statusTd);
+
+      return tr;
+    }
+
+    // Load recent transactions from backend
+    async function loadTransactions() {
+      try {
+        const response = await fetch(`${API_URL}/transactions`);
+        if (!response.ok) throw new Error('Failed to fetch transactions');
+        const data = await response.json();
+
+        const tbody = document.getElementById('transactionsBody');
+        tbody.innerHTML = '';
+        data.forEach(tx => {
+          tbody.appendChild(createTransactionRow(tx));
+        });
+      } catch (error) {
+        console.error(error);
+        const tbody = document.getElementById('transactionsBody');
+        tbody.innerHTML = '<tr><td colspan="4" class="px-4 py-3 text-center text-red-600">Unable to load transactions.</td></tr>';
+      }
+    }
+
+    // Send money handler
+    async function sendMoney() {
+      const recipient = prompt('Enter recipient name or ID:');
+      if (!recipient) return alert('Recipient is required.');
+
+      const amountStr = prompt('Enter amount to send:');
+      const amount = parseFloat(amountStr);
+      if (isNaN(amount) || amount <= 0) return alert('Invalid amount.');
+
+      try {
+        const response = await fetch(`${API_URL}/send`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({recipient, amount})
+        });
+        if (!response.ok) throw new Error('Failed to send money');
+        alert('Money sent successfully!');
+        loadTransactions();
+      } catch (error) {
+        alert('Error sending money: ' + error.message);
+      }
+    }
+
+    // Receive money handler (simulate)
+    async function receiveMoney() {
+      const sender = prompt('Enter sender name or ID:');
+      if (!sender) return alert('Sender is required.');
+
+      const amountStr = prompt('Enter amount to receive:');
+      const amount = parseFloat(amountStr);
+      if (isNaN(amount) || amount <= 0) return alert('Invalid amount.');
+
+      try {
+        const response = await fetch(`${API_URL}/receive`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({sender, amount})
+        });
+        if (!response.ok) throw new Error('Failed to receive money');
+        alert('Money received successfully!');
+        loadTransactions();
+      } catch (error) {
+        alert('Error receiving money: ' + error.message);
+      }
+    }
+
+    // Create savings goal handler
+    async function createSavingsGoal() {
+      const goalName = prompt('Enter savings goal name:');
+      if (!goalName) return alert('Goal name is required.');
+
+      const targetStr = prompt('Enter target amount:');
+      const target = parseFloat(targetStr);
+      if (isNaN(target) || target <= 0) return alert('Invalid target amount.');
+
+      try {
+        const response = await fetch(`${API_URL}/savings/goals`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({goalName, target})
+        });
+        if (!response.ok) throw new Error('Failed to create savings goal');
+        alert('Savings goal created!');
+      } catch (error) {
+        alert('Error creating savings goal: ' + error.message);
+      }
+    }
+
+    // View savings balance handler
+    async function viewSavingsBalance() {
+      try {
+        const response = await fetch(`${API_URL}/savings/balance`);
+        if (!response.ok) throw new Error('Failed to fetch savings balance');
+        const data = await response.json();
+        alert(`Your savings balance is $${data.balance.toFixed(2)}`);
+      } catch (error) {
+        alert('Error fetching savings balance: ' + error.message);
+      }
+    }
+
+    // Add to savings handler
+    async function addToSavings() {
+      const amountStr = prompt('Enter amount to add to savings:');
+      const amount = parseFloat(amountStr);
+      if (isNaN(amount) || amount <= 0) return alert('Invalid amount.');
+
+      try {
+        const response = await fetch(`${API_URL}/savings/add`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({amount})
+        });
+        if (!response.ok) throw new Error('Failed to add to savings');
+        alert('Amount added to savings!');
+      } catch (error) {
+        alert('Error adding to savings: ' + error.message);
+      }
+    }
+
+    // Language selection handler (basic example)
+    document.getElementById('language-select').addEventListener('change', (e) => {
+      const lang = e.target.value;
+      alert(`Language changed to: ${lang}. (Localization not implemented in this demo)`);
+    });
+
+    // Attach event listeners
+    document.getElementById('sendMoneyBtn').addEventListener('click', sendMoney);
+    document.getElementById('receiveMoneyBtn').addEventListener('click', receiveMoney);
+    document.getElementById('createGoalBtn').addEventListener('click', createSavingsGoal);
+    document.getElementById('viewBalanceBtn').addEventListener('click', viewSavingsBalance);
+    document.getElementById('addSavingsBtn').addEventListener('click', addToSavings);
+
+    // Load transactions on page load
+    loadTransactions();
+  </script>
+ </body>
+</html>
